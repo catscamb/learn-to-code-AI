@@ -1,0 +1,47 @@
+.explain {
+  position: relative;
+}
+
+.output {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 10rem;
+
+  font-size: var(--font-size-s);
+  font-style: italic;
+
+  text-wrap: balance;
+
+  padding: 0.2em var(--gap);
+}
+
+.output a,
+.output output {
+  display: block;
+
+  background-image: url(/huh-icon.svg);
+  background-size: 1em;
+  background-position: 0.1em 0.2em;
+  background-repeat: no-repeat;
+
+  padding-left: 1.5em;
+}
+
+.output output {
+  background-image: url(/wilson-smile.svg);
+}
+
+.output a:hover,
+.output a:focus {
+  color: var(--color-highlight);
+}
+
+@media (max-width: 64em) {
+  .output {
+    position: static;
+    padding: 0;
+    margin: var(--gap) 0;
+    width: auto;
+  }
+}

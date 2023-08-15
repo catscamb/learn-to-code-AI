@@ -1,0 +1,25 @@
+.panel:before {
+  background-image: url(/comments-icon.svg);
+}
+
+.panel form {
+  display: grid;
+  gap: calc(0.5 * var(--gap));
+}
+
+.error {
+  margin: var(--gap) 0;
+  font-style: italic;
+}
+
+.comment {
+  margin: var(--gap) 0;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment p:last-child {
+  font-size: var(--font-size-s);
+}

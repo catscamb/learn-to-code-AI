@@ -1,0 +1,219 @@
+/* CSS variables */
+:root {
+  --max-article-width: 32em;
+
+  --color-foreground: #333333;
+  --color-secondary-text: #727870;
+  --color-background: #fffbf0;
+  --color-block-background: #ffffff;
+  --color-border: #089755;
+  --color-highlight: #089755;
+  --color-block-disabled: #6a6f69;
+
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  --font-size-m: max(calc(16px + 0.5vmax), 16px);
+  --font-size-s: max(calc(14px + 0.25vmax), 14px);
+
+  --gap: 1.5rem;
+  --line-height: 1.5;
+}
+
+/* dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-foreground: #fffbf0;
+    --color-secondary-text: #727870;
+    --color-background: #111118;
+    --color-block-background: #010103;
+  }
+}
+
+/* general styling */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size-m);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-serif);
+  line-height: var(--line-height);
+}
+
+article {
+  max-width: var(--max-article-width);
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-background);
+}
+
+h1 {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 var(--gap) 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 var(--gap) 0;
+}
+
+h3 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  margin: var(--gap) 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  background-color: var(--color-block-background);
+}
+
+pre {
+  box-shadow: var(--box-shadow);
+}
+
+/* styling the header */
+header {
+  background-color: var(--color-block-background);
+  padding: calc(var(--gap) * 0.5) 1rem;
+
+  font-size: var(--font-size-s);
+
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+header p {
+  font-size: inherit;
+  margin: 0;
+}
+
+header span {
+  font-style: italic;
+}
+
+header nav {
+  display: flex;
+  gap: 1em;
+}
+
+header a:hover,
+header a:focus {
+  color: var(--color-highlight);
+}
+
+/* for the comments and questions box */
+.panel {
+  position: relative;
+
+  background-color: var(--color-block-background);
+  box-shadow: var(--box-shadow);
+
+  padding: var(--gap);
+  margin: var(--gap) 0 0 0;
+}
+
+.panel:before {
+  content: '';
+  position: absolute;
+  top: -0.8rem;
+  left: -0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-size: cover;
+}
+
+/* title within the panel areas */
+.title {
+  margin: 0 0 var(--gap) 0;
+}
+
+.title p {
+  font-size: var(--font-size-s);
+  margin: 0;
+  max-width: 75%;
+  text-wrap: balance;
+}
+
+.title a {
+  color: var(--color-highlight);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.title a:hover,
+.title a:focus {
+  text-decoration-color: var(--color-highlight);
+}
+
+/* form elements */
+input[type='text'],
+textarea,
+button {
+  font: inherit;
+  border: none;
+  padding: 0.2em 0.4em;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-block-background);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background: var(--color-highlight);
+  color: var(--color-background);
+  padding: 0.2em 1em;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: var(--color-block-disabled);
+  border-color: var(--color-block-disabled);
+  cursor: not-allowed;
+}
+
+/* dark mode! */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* mobile friendly */
+@media (max-width: 64em) {
+  header {
+    flex-direction: column;
+  }
+
+  article {
+    padding: 1rem;
+    max-width: none;
+  }
+}

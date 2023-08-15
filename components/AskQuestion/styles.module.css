@@ -1,0 +1,57 @@
+.content {
+  margin: 0 0 calc(3 * var(--gap)) 0;
+}
+
+.output:before {
+  background-image: url(/wilson-laugh.svg);
+}
+
+.output form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: calc(0.5 * var(--gap));
+}
+
+.output output {
+  display: block;
+
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  gap: var(--gap);
+
+  font-size: var(--font-size-s);
+  font-style: italic;
+  text-wrap: balance;
+
+  margin: 0 0 var(--gap) 0;
+}
+
+.output strong {
+  font-style: normal;
+  color: var(--color-highlight);
+}
+
+.chat p,
+.chat ol,
+.chat ul {
+  font-size: inherit;
+  margin: var(--gap) 0;
+}
+
+.chat div > *:first-child {
+  margin-top: 0;
+}
+
+.chat div > *:last-child {
+  margin-bottom: 0;
+}
+
+.chat ol,
+.chat ul {
+  padding-left: var(--gap);
+}
+
+.chat pre,
+.chat pre code {
+  font-style: normal;
+}
